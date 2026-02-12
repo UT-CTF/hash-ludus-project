@@ -1,0 +1,8 @@
+ludus:
+  - vm_name: "Test-Debian-VM"
+    hostname: "debian-test"
+    template: "debian-12-x64-server-template"
+    vlan: 10
+    ip: "10.14.10.5"
+    ram: 2048
+    cpus: 2
