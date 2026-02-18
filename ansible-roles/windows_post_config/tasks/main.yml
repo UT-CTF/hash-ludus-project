@@ -1,0 +1,19 @@
+---
+- name: Re-enable Windows Defender Real-Time Monitoring
+  ansible.windows.win_shell: |
+    Set-MpPreference -DisableRealtimeMonitoring $false
+    Set-MpPreference -DisableIOAVProtection $false
+  ignore_errors: yes
+
+- name: Ensure Windows Defender Service is Running
+  ansible.windows.win_service:
+    name: WinDefend
+    start_mode: auto
+    state: started
+  ignore_errors: yes
+
+- name: Enable Windows Update Service (wuauserv)
+  ansible.windows.win_service:
+    name: wuauserv
+    start_mode: manual
+    state: started
