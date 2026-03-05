@@ -1,0 +1,9 @@
+ludus:
+  - vm_name: "{{ range_id }}-web-server"
+    hostname: "web-srv-01"
+    template: debian-12-x64-server-template
+    vlan: 20
+    ip_last_octet: 80
+    ram_gb: 2
+    cpus: 1
+    linux: true

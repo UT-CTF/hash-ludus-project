@@ -1,11 +1,12 @@
 ludus:
   - vm_name: "{{ range_id }}-test-windows-11"
     hostname: "{{ range_id }}-win-test"
-    template: win11-22h2-x64-enterprise-debloated-template
+    template: windows-11-enterprise-debloated
     vlan: 20
     ip_last_octet: 2
     ram_gb: 4
-    cpus: 4
+    cpus: 2
     roles:
       - windows_post_config
-    windows: {}
+    windows:
+      sysprep: true

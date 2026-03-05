@@ -1,6 +1,7 @@
 ---
 - name: Re-enable Windows Defender Real-Time Monitoring
   ansible.windows.win_shell: |
+    Set-MpPreference -DisableBehaviorMonitoring $false
     Set-MpPreference -DisableRealtimeMonitoring $false
     Set-MpPreference -DisableIOAVProtection $false
   ignore_errors: yes
